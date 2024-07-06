@@ -1,0 +1,85 @@
+#header-logo{
+    height: 40px;
+    margin-left: 15px;
+}
+.nav-link{
+    color:black;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+#header-container{
+    height: 80vh;
+    background: linear-gradient(200deg, #7772fd, #69c0cb, #00ffe5);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+#body-container{
+    background-color: white;
+    position: absolute;
+    left: 10%;
+    height: auto;
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.image-container>img{
+    height: 500px;
+}
+.text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.hello{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.name{
+    font-family: "Anton SC", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+
+#footer-container{
+    height: 350px;
+    background-color: antiquewhite;
+}
+
+
+
+
+@media (max-width:600px){
+    #body-container{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .image-container>img{
+        position: relative;
+        height: 300px;
+    }
+    #footer-container{
+        height: 400px;
+    }
+}
+
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
