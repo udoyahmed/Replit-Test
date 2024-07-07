@@ -1,22 +1,22 @@
-import express from "express";
-import bodyParser from "body-parser";
+import express from 'express';
+import bodyParser from 'body-parser';
+import axios from 'axios';
+import {readFile} from 'fs/promises';
 
 const app = express();
 const port = 3000;
-
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static('public'));
+const json = JSON.parse(
+    await readFile(
+      new URL('./mecha23.json', import.meta.url)
+    )
+);
 
 app.get("/", (req,res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", { 
+        data 
+    })
 });
-app.get("/about", (req,res) => {
-    res.render("about.ejs");
-})
-app.get("/contact", (req,res) => {
-    res.render("contact.ejs");
-})
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+    console.log("Running on port " + port);
+} )
