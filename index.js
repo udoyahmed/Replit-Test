@@ -4,7 +4,7 @@ import axios from 'axios';
 import {readFile} from 'fs/promises';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const json = JSON.parse(
     await readFile(
       new URL('./mecha23.json', import.meta.url)
@@ -29,7 +29,9 @@ app.post("/submit", (req,res) => {
             email: result.email
         })
     }else{ 
-        res.render("./index.ejs");
+        res.render("./index.ejs",{
+            name: "ID Not Found"
+        });
     }
 });
 
