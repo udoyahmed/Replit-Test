@@ -67,6 +67,9 @@ body{
 .not-found{
   font-size: 0.8rem;
 }
+button{
+  margin-top: 20px;
+}
 
 @keyframes gradient-animation {
     0% {
