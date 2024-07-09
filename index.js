@@ -18,7 +18,7 @@ app.get("/", (req,res) => {
     res.render("index.ejs")
 });
 
-app.post("/submit", (req,res) => {
+app.post("/", (req,res) => {
     let id = parseInt(req.body.id);
     if( id > 2310000 && id < 2310181){
         let result = json.find( o => o.id === id )
